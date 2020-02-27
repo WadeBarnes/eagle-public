@@ -36,12 +36,14 @@ export class AddCommentComponent implements OnInit {
   public documentAuthorType: any;
   public contactName: string;
   public commentInput: any;
+  public reasonInput: any;
   public locationInput: any;
   public makePublic: any;
   public email: any;
   public commentFiles: any;
   public anonymousName = 'Anonymous';
   public submittedCAC: Boolean;
+  public memberName: any;
 
   constructor(
     public activeModal: NgbActiveModal,
@@ -116,7 +118,6 @@ export class AddCommentComponent implements OnInit {
   };
 
   private p2_becomeAMember() {
-    this.contactName = '';
     this.currentPage++;
   }
 
@@ -130,9 +131,9 @@ export class AddCommentComponent implements OnInit {
 
     // Build the comment
     let signUpObject = {
-      name: this.contactName,
+      name: this.memberName,
       email: this.email,
-      comment: this.commentInput,
+      comment: this.reasonInput,
     };
 
     this.projectService.cacSignUp(this.project, signUpObject)

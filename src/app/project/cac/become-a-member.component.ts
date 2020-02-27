@@ -29,6 +29,7 @@ export class BecomeAMemberComponent implements OnInit {
   public email: any;
   public emailInput: any;
   public commentInput: any;
+  public reasonInput: any;
   public acknowledged: any;
   public emailConfirm: any;
 
@@ -53,7 +54,7 @@ export class BecomeAMemberComponent implements OnInit {
     let signUpObject = {
       name: this.contactName,
       email: this.email,
-      comment: this.commentInput,
+      comment: this.reasonInput,
     };
 
     this.projectService.cacSignUp(this.project, signUpObject)

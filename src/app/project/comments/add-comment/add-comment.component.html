@@ -89,25 +89,25 @@
           <div class="form-group">
             <label class="control-label">Full Name *</label>
             <div class="form-control-container">
-              <input required class="form-control" type="text" name="nameInput" id="nameInput" [(ngModel)]="contactName" autofocus />
+              <input required class="form-control" type="text" name="nameInput" id="nameInput" [(ngModel)]="memberName" autofocus />
             </div>
           </div>
           <div class="form-group">
             <label class="control-label">Email Address *</label>
             <div class="form-control-container">
-              <input required class="form-control" type="text" name="emailInput" id="emailInput" [(ngModel)]="email" autofocus />
+              <input required email class="form-control" type="text" name="emailInput" id="emailInput" [(ngModel)]="email" autofocus />
             </div>
           </div>
           <div class="form-group">
             <label class="control-label">Confirm Email Address *</label>
             <div class="form-control-container">
-              <input required class="form-control" type="text" name="emailConfirmInput" id="emailConfirmInput" [(ngModel)]="emailConfirm" autofocus />
+              <input required email class="form-control" type="text" name="emailConfirmInput" id="emailConfirmInput" [(ngModel)]="emailConfirm" autofocus />
             </div>
           </div>
         </div>
         <div class="form-group">
           <label class="control-label" >A brief explanation of your interest in this project</label>
-          <textarea class="form-control" rows="8" name="commentInput" id="commentInput" [(ngModel)]="commentInput" autofocus></textarea>
+          <textarea class="form-control" rows="8" name="reasonInput" id="reasonInput" [(ngModel)]="reasonInput" autofocus></textarea>
         </div>
 
         <div class="form-group">
@@ -125,7 +125,7 @@
   <div class="modal-footer">
     <!-- enable submission when required fields are entered and when either a file or comment is entered -->
       <button class="btn btn-light" type="button" (click)="p3_back()">Back</button>
-      <button class="btn btn-primary" type="button" (click)="p3_next()" [disabled]="!cacSignUpForm.form.valid || (!commentInput)">Complete Submission</button>
+      <button class="btn btn-primary" type="button" (click)="p3_next()" [disabled]="!cacSignUpForm.form.valid || (email !== emailConfirm)">Complete Submission</button>
   </div>
 </div>
 </form>
@@ -177,9 +177,9 @@
               All comments are submitted anonymously by default. Checking this option will display your Name on the public site.
             </div>
           </div>
-          <div class="form-group">
+          <div class="form-group" *ngIf="project.projectCAC">
             <label class="control-label" >
-              <input type="checkbox" aria-label="Checkbox for row item" name="makeCAC" [(ngModel)]='makeCAC' (ngModelChange)="cacChecked($event)">
+              <input type="checkbox" aria-label="Checkbox for row item" name="submittedCAC" [(ngModel)]='submittedCAC'>
               I'm a Community Advisory Committee Member.
             </label>
             <div class="btn btn-link mb-1" (click)="learnMore()">
