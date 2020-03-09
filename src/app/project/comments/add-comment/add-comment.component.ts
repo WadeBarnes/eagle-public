@@ -184,6 +184,7 @@ export class AddCommentComponent implements OnInit {
     this.comment.comment = this.commentInput;
     this.comment.location = this.locationInput;
     this.comment.isAnonymous = !this.makePublic;
+    this.comment.submittedCAC = this.submittedCAC;
 
     this.commentService.add(this.comment)
       .toPromise()
