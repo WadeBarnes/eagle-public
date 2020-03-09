@@ -309,14 +309,6 @@ export class ProjectComponent implements OnInit, OnDestroy, AfterViewInit {
         console.log(`Cancelled, reason = ${reason}`);
       }
     );
-
-    // Not documents so can't use the tabLinkIfNotEmpty()
-    this.projectService.getPins(this.project._id, 1, 1, null)
-      .takeUntil(this.ngUnsubscribe)
-      .subscribe((response: DataQueryResponse<Org>[]) => {
-        if (response && response.length && response[0].results && response[0].results.length && response[0].total_items) {
-        this.tabLinks.push({ label: 'Participating Indigenous Nations', link: 'pins' });
-    }})
   }
 
   public addComment() {
