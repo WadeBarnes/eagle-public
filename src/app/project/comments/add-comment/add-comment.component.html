@@ -110,8 +110,13 @@
         </div>
 
         <div class="form-group">
-          <label class="control-label">I understand that...</label>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque sodales finibus. Duis pellentesque et purus a bibendum. Etiam porttitor scelerisque nunc, in finibus metus porta nec. Curabitur feugiat tincidunt libero non mattis. In lacus diam, feugiat eu aliquam et, malesuada quis augue.</p>
+          <label class="control-label understandText">I understand that...</label>
+          <p class="font-italic understandText">Your personal information is collected by the Environmental Assessment Agency for the purpose of sending you updates on {{project.name}} project under the authority of s.26(c) of the Freedom of Information and Protection of Privacy Act. In submitting your comment, you consent to receiving updates to the email address you have provided. This consent is valid from this date forward and may be revoked by contacting the EAO representative below. Should you have any questions about this collection, or wish to revoke your consent please contact:</p>
+            <ul class="font-italic understandText m-0">Director, Digital Services</ul>
+            <ul class="font-italic understandText m-0">Environmental Assessment Office</ul>
+            <ul class="font-italic understandText m-0">836 Yates Street, Victoria, BC</ul>
+            <ul class="font-italic understandText m-0">epicsupport.eao@gov.bc.ca</ul>
+            <ul class="font-italic understandText m-0 mb-2">(250) 356-7441</ul>
           <div class="form-control-container">
             <label class="control-label" >
             <input required type="checkbox" aria-label="Checkbox for row item" name="acknowledged" [(ngModel)]='acknowledged'>
